@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<nav><a asp-action="CreateCustomer" asp-controller="Customer">Create Customer</a></nav>
+<nav><a asp-action="Index" asp-controller="Customer">View All Customers</a></nav>
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    @{
+        if(TempData.ContainsKey("message"))
+        {
+            <h1>@TempData["message"]</h1>
+        }
+    }
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>

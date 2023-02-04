@@ -1,0 +1,47 @@
+@model IEnumerable<TestWEbApi2.CustomerDto.CustomerDto1>
+
+
+
+
+<div class="card-header" style="background-color:midnightblue;">
+    <div class="card-title">
+        <h1 class="text-center">Customers</h1>
+    </div>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerName)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.PhoneNumber)
+            </th>
+           
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => student.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => student.CustomerName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => student.PhoneNumber)
+            </td>
+            
+        </tr>
+        }
+    </tbody>
+</table>
+<button style="background-color:wheat;"><a asp-controller="Customer" asp-action="CreateCustomer">Create Customer</a> </button>
